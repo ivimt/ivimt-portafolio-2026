@@ -1,0 +1,61 @@
+/* ============================================
+   MODULE: _reset.css
+   ============================================
+   PEDAGOGICAL NOTE: Reset removes browser defaults so
+   your design is consistent across browsers.
+   Keep this separate so you can swap resets (e.g. normalize)
+   without touching your layout or components.
+   ============================================ */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 16px;
+	line-height: var(--line-height-normal);
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	font-family: var(--font-family-base);
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-normal);
+	color: var(--color-text-primary);
+	background-color: var(--color-bg);
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+	background: none;
+	border: none;
+}

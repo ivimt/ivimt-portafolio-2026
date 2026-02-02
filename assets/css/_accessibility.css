@@ -1,0 +1,50 @@
+/* ============================================
+   MODULE: _accessibility.css
+   ============================================
+   PEDAGOGICAL NOTE: A11y styles in one place.
+   Screen-reader helpers, skip links, reduced motion.
+   Keeps accessibility concerns visible and maintainable.
+   ============================================ */
+
+/* Visually hidden but read by screen readers */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Skip link: appears on focus for keyboard users */
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: var(--space-md);
+	background-color: var(--color-primary);
+	color: white;
+	padding: var(--space-md) var(--space-lg);
+	text-decoration: none;
+	border-radius: var(--radius-md);
+	z-index: var(--z-tooltip);
+	transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+	top: var(--space-md);
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

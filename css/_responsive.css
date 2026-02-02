@@ -1,0 +1,43 @@
+/* ============================================
+   MODULE: _responsive.css
+   ============================================
+   PEDAGOGICAL NOTE: All breakpoint overrides live here.
+   Mobile-first: base styles = mobile; media queries
+   add styles for larger screens. Or desktop-first: base
+   = desktop; queries shrink for mobile.
+   ============================================ */
+
+@media (max-width: 768px) {
+	.header-content {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	nav ul {
+		flex-direction: column;
+		gap: var(--space-sm);
+		width: 100%;
+	}
+
+	nav a {
+		display: block;
+		width: 100%;
+	}
+
+	.grid-2,
+	.grid-3,
+	.grid-4 {
+		grid-template-columns: 1fr;
+	}
+
+	.site-title {
+		font-size: var(--font-size-xl);
+	}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+	.grid-3,
+	.grid-4 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

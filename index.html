@@ -1,17 +1,105 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi pagina web</title>
-  </head>
-  <body>
-    <figure>
-      <img
-        src="https://ik.imagekit.io/ivibitmt/default-image.jpg?updatedAt=1769458547759"
-        alt="Elephant at sunset"
-      />
-      <figcaption>An elephant at sunset</figcaption>
-    </figure>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Student web development project for WEB ATELIER (UDIT) course - showcasing modern HTML, CSS, and JavaScript techniques" />
+		<meta name="author" content="[Your Name]" />
+		<title>My Web Project - WEB ATELIER (UDIT)</title>
+		<link rel="stylesheet" href="./assets/css/style.css" />
+	</head>
+	<body>
+		<a href="#main" class="skip-link">Saltar al contenido</a>
+
+		<header>
+			<div class="container">
+				<div class="header-content">
+					<h1 class="site-title">My Web Project</h1>
+					<nav aria-label="Main navigation">
+						<ul>
+							<li><a href="#about" class="active">About</a></li>
+							<li><a href="#goals">Goals</a></li>
+							<li><a href="#progress">Progress</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<main id="main">
+			<section id="about" class="container-narrow">
+				<h2>Welcome to My Project</h2>
+				<p class="lead">
+					This is my student project for the WEB ATELIER (UDIT) course. I'm learning modern web development with a focus on
+					semantic HTML, responsive CSS, and accessible JavaScript.
+				</p>
+				<p>
+					Throughout this course, I will build this site incrementally, committing progress after each class session. This
+					project demonstrates my understanding of web fundamentals and best practices.
+				</p>
+			</section>
+
+			<section id="goals" class="container">
+				<h2 class="text-center">Project Goals</h2>
+				<div class="grid grid-2">
+					<div class="card">
+						<h3 class="card-title">Responsive Design</h3>
+						<p class="card-content">
+							Create a mobile-first, responsive website that works seamlessly across all devices using modern CSS Grid and
+							Flexbox.
+						</p>
+					</div>
+
+					<div class="card">
+						<h3 class="card-title">Accessibility</h3>
+						<p class="card-content">
+							Follow WCAG AA guidelines to ensure the site is accessible to all users, including those using assistive
+							technologies.
+						</p>
+					</div>
+
+					<div class="card">
+						<h3 class="card-title">Modern CSS</h3>
+						<p class="card-content">
+							Implement CSS custom properties, fluid typography, and dark mode support for a contemporary user experience.
+						</p>
+					</div>
+
+					<div class="card">
+						<h3 class="card-title">Performance</h3>
+						<p class="card-content">
+							Optimize images, minimize code, and achieve 90+ Lighthouse scores for performance, accessibility, and SEO.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="progress" class="container bg-light">
+				<h2 class="text-center">Weekly Progress</h2>
+				<p class="text-center text-secondary mb-lg">Track my learning journey through weekly commits and updates.</p>
+				<div class="text-center mt-lg">
+					<a href="https://github.com/[username]/[project-repo]/commits/main" class="btn btn-primary">View Commit History</a>
+					<a href="project-brief.md" class="btn btn-secondary">Read Project Brief</a>
+					<a href="ejemplos/" class="btn btn-ghost">Examples</a>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div class="container">
+				<p class="text-muted">&copy; 2025 [Your Name] — WEB ATELIER (UDIT) · Web Design Course</p>
+				<p>
+					<a href="https://github.com/ruvebal/web-atelier-udit">Course Framework</a>
+					·
+					<a href="project-inspiration.md">Inspiration</a>
+					·
+					<a href="GETTING-STARTED.md">Getting Started</a>
+				</p>
+			</div>
+		</footer>
+
+		<script src="./assets/js/main.js" defer></script>
+	</body>
 </html>

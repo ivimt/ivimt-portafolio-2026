@@ -1,0 +1,372 @@
+# WEB ATELIER (UDIT) - AI Assistant Rules for Student Projects
+
+## Project Context
+
+This is a student web development project for the WEB ATELIER (UDIT) course. Students are learning modern web development with a focus on:
+
+- Semantic HTML5
+- Modern CSS (Grid, Flexbox, Custom Properties)
+- Vanilla JavaScript (ES6+)
+- Accessibility (WCAG AA compliance)
+- Performance optimization
+- Progressive enhancement
+- Responsive design (mobile-first)
+
+## Code Style & Standards
+
+### HTML
+
+- Use semantic HTML5 elements (`<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>`)
+- Always include proper document structure with `<!DOCTYPE html>`, `<html lang="es">` or `lang="en"`
+- Include essential meta tags: `charset`, `viewport`, `description`
+- Use ARIA attributes when needed for accessibility (`aria-label`, `aria-labelledby`, `role`)
+- Add `alt` text to all images
+- Ensure proper heading hierarchy (h1 → h2 → h3, no skipping levels)
+- Use `<button>` for actions, `<a>` for navigation
+- Include skip links for keyboard navigation: `<a href="#main" class="skip-link">Skip to main content</a>`
+
+**Example:**
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Student portfolio showcasing web design projects" />
+		<title>My Portfolio - WEB ATELIER</title>
+		<link rel="stylesheet" href="./assets/css/style.css" />
+	</head>
+	<body>
+		<a href="#main" class="skip-link">Skip to main content</a>
+
+		<header>
+			<nav aria-label="Main navigation">
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<section id="about">
+				<h1>About Me</h1>
+				<p>Welcome to my portfolio...</p>
+			</section>
+		</main>
+
+		<footer>
+			<p>&copy; 2025 Student Name - WEB ATELIER (UDIT)</p>
+		</footer>
+
+		<script src="./assets/js/main.js"></script>
+	</body>
+</html>
+```
+
+### CSS
+
+- Use CSS Custom Properties (variables) for design tokens (colors, spacing, typography)
+- Follow mobile-first responsive design approach
+- Use modern layout techniques: CSS Grid for page layouts, Flexbox for components
+- Implement fluid typography with `clamp()` for responsive font sizes
+- Use semantic class names (BEM methodology optional but recommended)
+- Ensure WCAG AA color contrast ratios (4.5:1 for normal text, 3:1 for large text)
+- Support dark mode with `prefers-color-scheme` media query
+- Respect `prefers-reduced-motion` for accessibility
+- Use logical properties when appropriate (`margin-inline`, `padding-block`)
+
+**Example:**
+
+```css
+:root {
+	/* Design tokens */
+	--color-primary: #1d4ed8;
+	--color-text: #0f172a;
+	--color-bg: #ffffff;
+
+	--font-size-base: clamp(1rem, 0.8vw + 0.85rem, 1.125rem);
+	--space-md: 1rem;
+
+	--transition-base: 250ms ease-in-out;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-text: #f1f5f9;
+		--color-bg: #0f172a;
+	}
+}
+
+/* Mobile-first approach */
+.container {
+	padding: var(--space-md);
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+	.container {
+		padding: var(--space-lg);
+	}
+}
+
+/* Accessibility: respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+```
+
+### JavaScript
+
+- Use modern ES6+ syntax (const/let, arrow functions, template literals, destructuring)
+- Avoid jQuery - use vanilla JavaScript
+- Use `addEventListener` instead of inline event handlers
+- Implement progressive enhancement (site works without JS)
+- Use `defer` or place scripts at end of `<body>`
+- Add meaningful comments explaining "why", not "what"
+- Handle errors gracefully with try/catch
+- Use `querySelector` and `querySelectorAll` for DOM selection
+- Prefer `fetch` API over XMLHttpRequest
+
+**Example:**
+
+```javascript
+// Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', () => {
+	// Smooth scroll for anchor links
+	const links = document.querySelectorAll('a[href^="#"]');
+
+	links.forEach((link) => {
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+			const targetId = link.getAttribute('href').substring(1);
+			const target = document.getElementById(targetId);
+
+			if (target) {
+				target.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start',
+				});
+			}
+		});
+	});
+
+	// Dark mode toggle
+	const darkModeToggle = document.querySelector('[data-theme-toggle]');
+
+	if (darkModeToggle) {
+		darkModeToggle.addEventListener('click', () => {
+			document.documentElement.classList.toggle('dark-mode');
+			const isDark = document.documentElement.classList.contains('dark-mode');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+	}
+
+	// Load saved theme preference
+	const savedTheme = localStorage.getItem('theme');
+	if (savedTheme === 'dark') {
+		document.documentElement.classList.add('dark-mode');
+	}
+});
+```
+
+## Performance Best Practices
+
+- Optimize images (use WebP format, compress, lazy load)
+- Minimize CSS and JavaScript files for production
+- Use `preload` for critical resources
+- Implement lazy loading for images: `<img loading="lazy" />`
+- Avoid layout shifts (CLS) by specifying image dimensions
+- Use `font-display: swap` for web fonts
+- Minimize HTTP requests
+- Target Lighthouse scores: 90+ for Performance, Accessibility, Best Practices, SEO
+
+**Example:**
+
+```html
+<!-- Preload critical resources -->
+<link rel="preload" href="./assets/css/style.css" as="style" />
+<link rel="preload" href="./assets/fonts/main-font.woff2" as="font" type="font/woff2" crossorigin />
+
+<!-- Optimized image with lazy loading -->
+<img
+	src="./images/hero-image.webp"
+	alt="Portfolio hero image"
+	width="1200"
+	height="600"
+	loading="lazy"
+	decoding="async"
+/>
+```
+
+## Accessibility Requirements
+
+- Maintain proper heading hierarchy (h1 → h2 → h3)
+- Provide text alternatives for images (`alt` attributes)
+- Ensure keyboard navigation works (test with Tab key)
+- Use ARIA labels for icon-only buttons
+- Maintain 4.5:1 contrast ratio for text
+- Support screen readers with semantic HTML
+- Include skip links for keyboard users
+- Test with keyboard only (no mouse)
+- Ensure focus indicators are visible
+
+**Example:**
+
+```html
+<!-- Icon button with accessible label -->
+<button aria-label="Toggle dark mode" class="theme-toggle">
+	<svg aria-hidden="true" width="24" height="24">
+		<use href="#icon-moon"></use>
+	</svg>
+</button>
+
+<!-- Form with proper labels -->
+<form>
+	<label for="email">Email Address</label>
+	<input type="email" id="email" name="email" required aria-required="true" />
+
+	<label for="message">Your Message</label>
+	<textarea id="message" name="message" required aria-required="true"></textarea>
+
+	<button type="submit">Send Message</button>
+</form>
+```
+
+## File Organization
+
+```
+student-project-template/
+├── index.html              # Main HTML file
+├── assets/
+│   ├── css/
+│   │   └── style.css       # Main stylesheet
+│   └── js/
+│       └── main.js         # Main JavaScript file
+├── images/                 # Optimized images
+├── project.yaml            # Project metadata
+├── project-brief.md        # Project description
+├── project-inspiration.md  # Design inspiration
+└── README.md              # Project documentation
+```
+
+## Git Commit Guidelines
+
+- Commit after each class session
+- Use descriptive commit messages in English or Spanish
+- Follow conventional commits format:
+  - `feat: add dark mode toggle`
+  - `fix: correct navigation accessibility`
+  - `style: improve button hover states`
+  - `docs: update README with setup instructions`
+  - `refactor: reorganize CSS variables`
+
+## Common Patterns to Use
+
+### Responsive Navigation
+
+```html
+<nav aria-label="Main navigation">
+	<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+		<span class="sr-only">Toggle menu</span>
+		<svg aria-hidden="true"><!-- hamburger icon --></svg>
+	</button>
+	<ul id="nav-menu" class="nav-menu">
+		<li><a href="#about">About</a></li>
+		<li><a href="#projects">Projects</a></li>
+		<li><a href="#contact">Contact</a></li>
+	</ul>
+</nav>
+```
+
+### Card Component
+
+```html
+<article class="card">
+	<img src="./images/project-1.webp" alt="Project 1 screenshot" loading="lazy" />
+	<div class="card-content">
+		<h3 class="card-title">Project Title</h3>
+		<p class="card-description">Brief description of the project...</p>
+		<a href="#" class="btn btn-primary">View Project</a>
+	</div>
+</article>
+```
+
+### Form with Validation
+
+```html
+<form id="contact-form" novalidate>
+	<div class="form-group">
+		<label for="name">Name *</label>
+		<input type="text" id="name" name="name" required aria-required="true" />
+		<span class="error-message" role="alert"></span>
+	</div>
+
+	<div class="form-group">
+		<label for="email">Email *</label>
+		<input type="email" id="email" name="email" required aria-required="true" />
+		<span class="error-message" role="alert"></span>
+	</div>
+
+	<button type="submit" class="btn btn-primary">Send</button>
+</form>
+```
+
+## What NOT to Do
+
+- ❌ Don't use inline styles (`style="..."`)
+- ❌ Don't use `!important` unless absolutely necessary
+- ❌ Don't use deprecated HTML elements (`<center>`, `<font>`)
+- ❌ Don't rely on JavaScript for critical functionality
+- ❌ Don't use `div` when semantic elements exist
+- ❌ Don't skip heading levels (h1 → h3)
+- ❌ Don't use generic class names (`div1`, `box`, `container1`)
+- ❌ Don't forget `alt` text on images
+- ❌ Don't use fixed pixel values for fonts (use rem/em)
+- ❌ Don't ignore mobile devices (always test responsive)
+
+## Testing Checklist
+
+Before each commit, verify:
+
+- [ ] HTML validates (use W3C validator)
+- [ ] CSS validates (use W3C CSS validator)
+- [ ] No JavaScript console errors
+- [ ] Works on mobile (320px width minimum)
+- [ ] Works on tablet (768px)
+- [ ] Works on desktop (1920px)
+- [ ] Keyboard navigation works (Tab, Enter, Escape)
+- [ ] Screen reader friendly (test with NVDA/JAWS/VoiceOver)
+- [ ] Color contrast passes WCAG AA
+- [ ] Images have alt text
+- [ ] Links have descriptive text (not "click here")
+- [ ] Forms have proper labels
+
+## Resources Referenced in Course
+
+- [MDN Web Docs](https://developer.mozilla.org/) - Primary reference
+- [Web.dev](https://web.dev/) - Best practices and guides
+- [Can I Use](https://caniuse.com/) - Browser compatibility
+- [CSS-Tricks](https://css-tricks.com/) - CSS techniques
+- [A11y Project](https://www.a11yproject.com/) - Accessibility
+- [WebAIM](https://webaim.org/) - Accessibility testing
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse) - Performance auditing
+
+## When to Ask for Help
+
+If you encounter:
+
+- Browser compatibility issues
+- Complex accessibility requirements
+- Performance optimization beyond basics
+- Advanced JavaScript patterns
+- Build tools or deployment issues
+- Git conflicts or version control problems
+
+Remember: This is a learning project. Focus on fundamentals, clean code, and accessibility. Avoid over-engineering or using frameworks unless specifically required by the course.

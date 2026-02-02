@@ -1,0 +1,172 @@
+/* ============================================
+   MODULE: _components.css
+   ============================================
+   PEDAGOGICAL NOTE: Components = reusable UI pieces
+   (header, footer, buttons, cards). Each block is
+   self-contained. In larger projects, one file per
+   component: _header.css, _footer.css, _button.css
+   ============================================ */
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+	background-color: var(--color-bg-light);
+	padding: var(--space-lg) 0;
+	border-bottom: 1px solid var(--color-border-light);
+	position: sticky;
+	top: 0;
+	z-index: var(--z-sticky);
+	backdrop-filter: blur(10px);
+}
+
+.dark-mode header {
+	background-color: rgba(30, 41, 59, 0.9);
+}
+
+header .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav ul {
+	display: flex;
+	gap: var(--space-lg);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav a {
+	color: var(--color-text-primary);
+	font-weight: var(--font-weight-medium);
+	padding: var(--space-sm) var(--space-md);
+	border-radius: var(--radius-md);
+	transition: all var(--transition-fast);
+}
+
+nav a:hover {
+	background-color: var(--color-bg-light);
+	text-decoration: none;
+}
+
+nav a.active {
+	color: var(--color-primary);
+	background-color: var(--color-bg-light);
+}
+
+/* ===== FOOTER ===== */
+footer {
+	background-color: var(--color-bg-light);
+	padding: var(--space-3xl) 0 var(--space-xl);
+	margin-top: var(--space-4xl);
+	border-top: 1px solid var(--color-border-light);
+}
+
+footer p {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-muted);
+	margin-bottom: var(--space-sm);
+}
+
+footer a {
+	color: var(--color-text-secondary);
+	transition: color var(--transition-fast);
+}
+
+footer a:hover {
+	color: var(--color-primary);
+}
+
+/* ===== BUTTON COMPONENTS ===== */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-sm);
+	padding: var(--space-md) var(--space-xl);
+	font-weight: var(--font-weight-semibold);
+	border-radius: var(--radius-md);
+	transition: all var(--transition-base);
+	cursor: pointer;
+	text-decoration: none;
+	border: 2px solid transparent;
+}
+
+.btn-primary {
+	background-color: var(--color-primary);
+	color: white;
+}
+
+.btn-primary:hover {
+	background-color: var(--color-primary-hover);
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-lg);
+	text-decoration: none;
+}
+
+.btn-secondary {
+	background-color: transparent;
+	color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+	background-color: var(--color-primary);
+	color: white;
+	text-decoration: none;
+}
+
+.btn-ghost {
+	background-color: transparent;
+	color: var(--color-text-primary);
+}
+
+.btn-ghost:hover {
+	background-color: var(--color-bg-light);
+	text-decoration: none;
+}
+
+/* ===== CARD COMPONENTS ===== */
+.card {
+	background-color: var(--color-bg);
+	border: 1px solid var(--color-border-light);
+	border-radius: var(--radius-lg);
+	padding: var(--space-xl);
+	transition: all var(--transition-base);
+}
+
+.card:hover {
+	box-shadow: var(--shadow-lg);
+	transform: translateY(-4px);
+	border-color: var(--color-border-medium);
+}
+
+.card-title {
+	font-size: var(--font-size-xl);
+	margin-bottom: var(--space-md);
+}
+
+.card-content {
+	color: var(--color-text-secondary);
+}
+
+/* ===== ADDITIONAL COMPONENTS ===== */
+.header-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--space-md);
+}
+
+.site-title {
+	margin: 0;
+	font-size: var(--font-size-2xl);
+}
+
+.lead {
+	font-size: var(--font-size-lg);
+	line-height: var(--line-height-relaxed);
+	color: var(--color-text-primary);
+	font-weight: var(--font-weight-medium);
+}

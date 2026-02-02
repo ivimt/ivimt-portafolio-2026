@@ -1,0 +1,43 @@
+/* ============================================
+   WEB ATELIER (UDIT) - Student Project Template
+   ============================================
+   Main Stylesheet: Modular CSS Architecture
+   This file uses the barrel pattern: it serves
+	 as a single entry point, importing all CSS
+	 partials in the correct order for modularity
+	 and maintainability.
+   ============================================
+   PEDAGOGICAL NOTE: This file is the ENTRY POINT.
+   It imports partials in a specific order (cascade matters).
+   Learn modularization: each partial has ONE concern.
+   To add a new component: create _my-component.css and
+   add @import below. Order: variables → reset → base →
+   layout → components → utilities → a11y → responsive → print
+   ============================================ */
+
+/* 1. Variables first: tokens used by all other modules */
+@import '_variables.css';
+
+/* 2. Reset: normalize browser defaults */
+@import '_reset.css';
+
+/* 3. Base: typography, links, raw HTML elements */
+@import '_base.css';
+
+/* 4. Layout: containers, grids, main structure */
+@import '_layout.css';
+
+/* 5. Components: header, footer, buttons, cards */
+@import '_components.css';
+
+/* 6. Utilities: single-purpose helper classes */
+@import '_utilities.css';
+
+/* 7. Accessibility: sr-only, skip-link, reduced motion */
+@import '_accessibility.css';
+
+/* 8. Responsive: breakpoint overrides */
+@import '_responsive.css';
+
+/* 9. Print: print-specific styles */
+@import '_print.css';
