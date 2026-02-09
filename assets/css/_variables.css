@@ -15,7 +15,7 @@
 	/* ===== COLOR SYSTEM ===== */
 	/* Primary brand colors */
 	--color-primary: #1d4ed8;
-	--color-primary-hover: #1e40af;
+	--color-primary-hover: #1a46c2; /* ~10% darker */
 	--color-primary-light: #3b82f6;
 	--color-primary-dark: #1e3a8a;
 
@@ -63,8 +63,8 @@
 	--font-weight-bold: 700;
 
 	/* Font families */
-	--font-family-base: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-	--font-family-heading: var(--font-family-base);
+	--font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	--font-family-heading: 'Montserrat', var(--font-family-base);
 	--font-family-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, 'Courier New', monospace;
 
 	/* ===== SPACING SCALE ===== */
@@ -108,10 +108,10 @@
 	--z-tooltip: 70;
 
 	/* ===== SCROLLYTELLING GRADIENTS ===== */
-	--gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	--gradient-chapter-1: linear-gradient(135deg, #2c3e50, #34495e);
-	--gradient-chapter-2: linear-gradient(135deg, #c0392b, #8e44ad);
-	--gradient-chapter-3: linear-gradient(135deg, #27ae60, #2ecc71);
+	--gradient-hero: linear-gradient(135deg, #1d4ed8 0%, #764ba2 100%);
+	--gradient-chapter-1: linear-gradient(135deg, #3498db, #1a46c2);
+	--gradient-chapter-2: linear-gradient(135deg, #e74c3c, #b02a2a);
+	--gradient-chapter-3: linear-gradient(135deg, #2ecc71, #1fa65a);
 
 	/* ===== SCROLLYTELLING COLORS ===== */
 	--color-accent-blue: #3498db;
