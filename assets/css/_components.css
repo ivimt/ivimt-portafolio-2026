@@ -170,12 +170,3 @@ footer a:hover {
 	color: var(--color-text-primary);
 	font-weight: var(--font-weight-medium);
 }
-
-.mi-primer-estilo {
-color: rgb(61, 125, 15);
-font-style: italic;
-}
-
-.tamaño-imagen {
-width: 30%;
-}

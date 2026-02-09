@@ -30,6 +30,9 @@
 /* 5. Components: header, footer, buttons, cards */
 @import '_components.css';
 
+/* 5.5 Scrollytelling: progressive reveal components */
+@import '_scrollytelling.css';
+
 /* 6. Utilities: single-purpose helper classes */
 @import '_utilities.css';
 

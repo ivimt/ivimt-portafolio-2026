@@ -106,6 +106,20 @@
 	--z-modal: 50;
 	--z-popover: 60;
 	--z-tooltip: 70;
+
+	/* ===== SCROLLYTELLING GRADIENTS ===== */
+	--gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	--gradient-chapter-1: linear-gradient(135deg, #2c3e50, #34495e);
+	--gradient-chapter-2: linear-gradient(135deg, #c0392b, #8e44ad);
+	--gradient-chapter-3: linear-gradient(135deg, #27ae60, #2ecc71);
+
+	/* ===== SCROLLYTELLING COLORS ===== */
+	--color-accent-blue: #3498db;
+	--color-accent-red: #e74c3c;
+	--color-accent-green: #2ecc71;
+	--color-overlay-dark: rgba(0, 0, 0, 0.4);
+	--color-card-bg: rgba(255, 255, 255, 0.05);
+	--color-card-border: rgba(255, 255, 255, 0.1);
 }
 
 /* ============================================
@@ -134,7 +148,7 @@
 /* Manual dark mode toggle (add .dark-mode class to <html> or <body>) */
 .dark-mode {
 	--color-text-primary: #f1f5f9;
-	--color-text-secondary: rgb(61, 125, 15);
+	--color-text-secondary: #cbd5e1;
 	--color-text-muted: #94a3b8;
 
 	--color-bg: #0f172a;

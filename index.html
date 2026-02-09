@@ -5,102 +5,167 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta
 			name="description"
-			content="Student web development project for WEB ATELIER (UDIT) course - showcasing modern HTML, CSS, and JavaScript techniques" />
-		<meta name="author" content="[Your Name]" />
-		<title>My Web Project - WEB ATELIER (UDIT)</title>
+			content="Portfolio de ilustración - WEB ATELIER (UDIT) - Historias que se despliegan mientras scrolleas" />
+		<meta name="author" content="[Ivanka Moreno Torres]" />
+		<title>Mi Portfolio - WEB ATELIER (UDIT)</title>
 		<link rel="stylesheet" href="./assets/css/style.css" />
 	</head>
 	<body>
 		<a href="#main" class="skip-link">Saltar al contenido</a>
 
-		<header>
-			<div class="container">
-				<div class="header-content">
-					<h1 class="site-title">Portafolio de Ilustración</h1>
-					<nav aria-label="Main navigation">
-						<ul>
-							<li><a href="#about" class="active">Sobre mí</a></li>
-							<li><a href="#goals">Logros</a></li>
-							<li><a href="#progress">Progreso</a></li>
-						</ul>
-					</nav>
+		<!-- Hero Section -->
+		<div class="hero">
+			<div>
+				<h1>📜 Ivanka Moreno Torres</h1>
+				<p>Historias visuales que cobran vida<br />Portafolio de Ilustración</p>
+				<div class="scroll-indicator">↓ Scroll para descubrir mi trabajo ↓</div>
+			</div>
+		</div>
+
+		<!-- Main Content -->
+		<main id="main">
+			<!-- Chapter 1: About Me -->
+			<section class="story-section chapter-1" data-observe>
+				<div class="story-content">
+					<h2>Sobre Mí</h2>
+					<p class="text-large">
+						Soy ilustradora especializada en el diseño de portadas ilustrativas. Mi trabajo explora el mundo literario, combinando
+						técnicas tradicionales con herramientas digitales.
+					</p>
+
+					<div class="stat-display">
+						<div class="stat-item">
+							<span class="stat-number">3+</span>
+							<span class="stat-label">Años de Experiencia</span>
+						</div>
+						<div class="stat-item">
+							<span class="stat-number">50+</span>
+							<span class="stat-label">Proyectos Completados</span>
+						</div>
+						<div class="stat-item">
+							<span class="stat-number">10+</span>
+							<span class="stat-label">Clientes Satisfechos</span>
+						</div>
+					</div>
+
+					<p>
+						Creo que cada ilustración cuenta una historia. Mi proceso comienza con la investigación y exploración conceptual,
+						seguido de bocetos y refinamiento iterativo hasta lograr la pieza final.
+					</p>
+				</div>
+			</section>
+
+			<!-- Parallax Section -->
+			<div class="parallax-section">
+				<div class="parallax-content">
+					<h3>El Arte de Contar Historias Visuales</h3>
+					<p class="text-large">Cada trazo tiene un propósito</p>
 				</div>
 			</div>
-		</header>
 
-		<main id="main">
-			<section id="about" class="container-narrow">
-				<h2 class="mi-primer-estilo">Welcome to My Project</h2>
-				<img class="tamaño-imagen" src="https://ik.imagekit.io/ivibitmt/Portafolio/Floravante%20azul%202%20wepb.webp" alt="Profile picture of [Your Name]" class="profile-pic" />
-				<p class="lead">
-					This is my student project for the WEB ATELIER (UDIT) course. I'm learning modern web development with a focus on
-					semantic HTML, responsive CSS, and accessible JavaScript.
-				</p>
-				<p>
-					Throughout this course, I will build this site incrementally, committing progress after each class session. This
-					project demonstrates my understanding of web fundamentals and best practices.
-				</p>
+			<!-- Chapter 2: My Work -->
+			<section class="story-section chapter-2" data-observe>
+				<div class="story-content">
+					<h2>Mi Trabajo</h2>
+					<p class="text-large mb-lg">Me especializo en varias áreas de ilustración:</p>
+
+					<div class="interactive-cards">
+						<div class="card">
+							<h4>Editorial</h4>
+							<p>Ilustraciones para revistas, libros y publicaciones digitales que capturan la esencia de cada historia.</p>
+						</div>
+						<div class="card">
+							<h4>Branding</h4>
+							<p>Identidades visuales únicas que ayudan a las marcas a conectar emocionalmente con su audiencia.</p>
+						</div>
+						<div class="card">
+							<h4>Digital</h4>
+							<p>Arte conceptual y diseño de personajes para videojuegos, animación y medios interactivos.</p>
+						</div>
+					</div>
+
+					<p class="mt-lg">Cada proyecto es una oportunidad para explorar nuevas técnicas y estilos visuales.</p>
+				</div>
 			</section>
 
-			<section id="goals" class="container">
-				<h2 class="text-center">Project Goals</h2>
-				<div class="grid grid-2">
-					<div class="card">
-						<h3 class="card-title">Responsive Design</h3>
-						<p class="card-content">
-							Create a mobile-first, responsive website that works seamlessly across all devices using modern CSS Grid and
-							Flexbox.
-						</p>
-					</div>
+			<!-- Timeline Section -->
+			<section class="story-section chapter-1" data-observe>
+				<div class="story-content">
+					<h2>Mi Proceso Creativo</h2>
+					<p class="text-large mb-lg">Así es como transformo ideas en ilustraciones:</p>
 
-					<div class="card">
-						<h3 class="card-title">Accessibility</h3>
-						<p class="card-content">
-							Follow WCAG AA guidelines to ensure the site is accessible to all users, including those using assistive
-							technologies.
-						</p>
-					</div>
-
-					<div class="card">
-						<h3 class="card-title">Modern CSS</h3>
-						<p class="card-content">
-							Implement CSS custom properties, fluid typography, and dark mode support for a contemporary user experience.
-						</p>
-					</div>
-
-					<div class="card">
-						<h3 class="card-title">Performance</h3>
-						<p class="card-content">
-							Optimize images, minimize code, and achieve 90+ Lighthouse scores for performance, accessibility, and SEO.
-						</p>
+					<div class="timeline">
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h4>1. Investigación y Concepto</h4>
+								<p>Exploro referencias, creo moodboards y desarrollo la dirección conceptual del proyecto.</p>
+							</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h4>2. Bocetos y Exploración</h4>
+								<p>Genero múltiples bocetos rápidos para explorar composiciones y estilos diferentes.</p>
+							</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<h4>3. Refinamiento y Color</h4>
+								<p>Desarrollo el boceto seleccionado, añado color y ajusto detalles hasta la pieza final.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
 
-			<section id="progress" class="container bg-light">
-				<h2 class="text-center">Weekly Progress</h2>
-				<p class="text-center text-secondary mb-lg">Track my learning journey through weekly commits and updates.</p>
-				<div class="text-center mt-lg">
-					<a href="https://github.com/[username]/[project-repo]/commits/main" class="btn btn-primary">View Commit History</a>
-					<a href="project-brief.md" class="btn btn-secondary">Read Project Brief</a>
-					<a href="ejemplos/" class="btn btn-ghost">Examples</a>
+			<!-- Chapter 3: Skills & Tools -->
+			<section class="story-section chapter-3" data-observe>
+				<div class="story-content">
+					<h2>Herramientas y Técnicas</h2>
+					<p class="text-large mb-lg">Combino herramientas digitales y análogas para crear mi trabajo:</p>
+
+					<div class="interactive-cards">
+						<div class="card">
+							<h4>🎨 Digital</h4>
+							<p>• Procreate<br />• Adobe Photoshop<br />• Illustrator<br />• After Effects</p>
+						</div>
+						<div class="card">
+							<h4>✏️ Tradicional</h4>
+							<p>• Acuarela<br />• Tinta y plumilla<br />• Lápices de color<br />• Collage mixto</p>
+						</div>
+						<div class="card">
+							<h4>💡 Especialidades</h4>
+							<p>• Character design<br />• Concept art<br />• Storytelling visual<br />• Ilustración editorial</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Final CTA Section -->
+			<section class="final-section">
+				<div class="final-content">
+					<h2>¿Trabajamos Juntos?</h2>
+					<p>
+						Si tienes un proyecto en mente o simplemente quieres charlar sobre ilustración, me encantaría escucharte. Estoy
+						siempre abierto a nuevas colaboraciones creativas.
+					</p>
+					<a href="mailto:tu@email.com" class="cta-button">Contacta Conmigo</a>
+
+					<p class="mt-xl text-muted">
+						<strong>Reflexión:</strong> Este portfolio usa scrollytelling para contar mi historia de forma progresiva. Cada
+						sección se revela mientras navegas, creando una experiencia más inmersiva que una página tradicional.
+					</p>
 				</div>
 			</section>
 		</main>
 
-		<footer>
-			<div class="container">
-				<p class="text-muted">&copy; 2025 [Your Name] — WEB ATELIER (UDIT) · Web Design Course</p>
-				<p>
-					<a href="https://github.com/ruvebal/web-atelier-udit">Course Framework</a>
-					·
-					<a href="project-inspiration.md">Inspiration</a>
-					·
-					<a href="GETTING-STARTED.md">Getting Started</a>
-				</p>
-			</div>
-		</footer>
+		<!-- Scroll Progress Indicator -->
+		<div class="info-overlay">
+			<div>Progreso: <strong><span id="progress">0</span>%</strong></div>
+		</div>
 
-		<script src="./assets/js/main.js" defer></script>
+		<script src="./assets/js/main.js"></script>
 	</body>
 </html>

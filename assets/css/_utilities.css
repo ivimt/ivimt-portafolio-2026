@@ -74,3 +74,17 @@
 .p-xl {
 	padding: var(--space-xl);
 }
+
+/* Additional spacing utilities for scrollytelling */
+.mt-2xl {
+	margin-top: var(--space-2xl);
+}
+.mt-3xl {
+	margin-top: var(--space-3xl);
+}
+.mb-2xl {
+	margin-bottom: var(--space-2xl);
+}
+.mb-3xl {
+	margin-bottom: var(--space-3xl);
+}
