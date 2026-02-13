@@ -98,5 +98,91 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 // ===== CONSOLE LOG FOR DEBUGGING =====
 // PEDAGOGICAL NOTE: Helpful during development, remove in production
 
+// ===== CARGAR GALERÍA DE PROYECTOS DESDE CSV =====
+// Esta función carga las imágenes desde el archivo Proyectos.csv
+// y las muestra como tarjetas interactivas
+
+function loadPortfolioGallery() {
+	const gallery = document.getElementById('portfolioGallery');
+	
+	if (!gallery) {
+		console.warn('Gallery element not found');
+		return;
+	}
+
+	// Cargar el archivo CSV
+	fetch('./docs/Proyectos.csv')
+		.then(response => response.text())
+		.then(data => {
+			// Parsear el CSV
+			const lines = data.trim().split('\n');
+			const projects = [];
+
+			// Saltar la línea de encabezado (línea 0)
+			// La línea 1 contiene el ejemplo de formato, así que también la saltamos
+			for (let i = 2; i < lines.length; i++) {
+				const line = lines[i].trim();
+				if (line.length === 0) continue; // Saltar líneas vacías
+
+				// Parsear cada línea del CSV
+				// Formato: URL, Alt/Description, Title, Category, Text
+				const parts = line.split(',').map(part => part.trim());
+				
+				if (parts.length >= 4) {
+					const project = {
+						image: parts[0],
+						alt: parts[1],
+						title: parts[2],
+						category: parts[3],
+						text: parts[4] || ''
+					};
+					projects.push(project);
+				}
+			}
+
+			// Limpiar el contenedor
+			gallery.innerHTML = '';
+
+			// Crear tarjetas para cada proyecto
+			projects.forEach((project, index) => {
+				const card = document.createElement('div');
+				card.className = 'portfolio-card';
+				card.setAttribute('data-category', project.category);
+				card.setAttribute('data-observe', '');
+				
+				card.innerHTML = `
+					<div class="portfolio-card-image">
+						<img src="${project.image}" alt="${project.alt}" loading="lazy" />
+						<div class="portfolio-card-overlay">
+							<span class="portfolio-card-category">${project.category}</span>
+						</div>
+					</div>
+					<div class="portfolio-card-content">
+						<h4>${project.title}</h4>
+						<p>${project.alt}</p>
+						${project.text ? `<span class="portfolio-card-text">${project.text}</span>` : ''}
+					</div>
+				`;
+
+				gallery.appendChild(card);
+
+				// Observar la nueva tarjeta
+				observer.observe(card);
+			});
+
+			console.log(`Portfolio gallery loaded with ${projects.length} projects`);
+		})
+		.catch(error => {
+			console.error('Error loading portfolio gallery:', error);
+			gallery.innerHTML = '<div class="error-message">Error al cargar la galería de proyectos</div>';
+		});
+}
+
+// Cargar la galería cuando el DOM esté listo
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', loadPortfolioGallery);
+} else {
+	loadPortfolioGallery();
+}
 console.log('✅ Scrollytelling initialized');
 console.log(`📊 Observing ${document.querySelectorAll('[data-observe]').length} sections`);
