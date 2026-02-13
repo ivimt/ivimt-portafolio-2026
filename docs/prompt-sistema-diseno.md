@@ -49,7 +49,7 @@ Summary of changes made to `assets/css/_variables.css`:
   - Headings: set `--font-family-heading` to Montserrat (Google Fonts). URL: https://fonts.google.com/specimen/Montserrat
 
 - Colors & gradients:
-  - Primary brand color retained `--color-primary: #1d4ed8` with hover variant `--color-primary-hover: #1a46c2` (~10% darker).
+  - Primary brand color retained `--color-primary: #d81dafff` with hover variant `--color-primary-hover: #bb518fff` (~10% darker).
   - Hero gradient updated to pair primary with purple accent: `--gradient-hero: linear-gradient(135deg, #1d4ed8 0%, #764ba2 100%)`.
   - Chapter gradients aligned with accent palette.
   - Accent tokens set: `--color-accent-blue: #3498db`, `--color-accent-red: #e74c3c`, `--color-accent-green: #2ecc71`.
