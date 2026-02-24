@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Página no encontrada - Portfolio de ilustración" />
+		<meta name="author" content="Ivanka Moreno Torres" />
+		<title>404 - Página no encontrada</title>
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Enriqueta:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<a href="#main" class="skip-link">Saltar al contenido</a>
+
+		<!-- Hero Section -->
+		<div class="hero">
+			<div>
+				<h1>404</h1>
+				<p>Página no encontrada</p>
+				<div class="scroll-indicator">La página que buscas no existe</div>
+			</div>
+		</div>
+
+		<!-- Main Content -->
+		<main id="main">
+			<section class="final-section">
+				<div class="final-content">
+					<h2>¡Oops! La página no existe</h2>
+					<p>
+						Parece que has llegado a una URL que no es válida. No te preocupes, te redirigiremos al inicio de mi portafolio en breve.
+					</p>
+					<a href="index.html" class="cta-button">Volver al Inicio</a>
+
+					<p class="mt-xl text-muted">
+						Serás redirigido automáticamente en 5 segundos...
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="footer-content">
+				<p>&copy; 2026 Ivanka Moreno Torres</p>
+				<p>Git repository: <a href="https://github.com/ivimt/ivimt-portafolio-2026.git" target="_blank">https://github.com/ivimt/ivimt-portafolio-2026.git</a></p>
+			</div>
+		</footer>
+
+		<script>
+			// Redirigir a index.html después de 5 segundos
+			setTimeout(function() {
+				window.location.href = 'index.html';
+				window.scrollTo(0, 0);
+			}, 5000);
+
+			// También redirigir cuando hagas click en el botón
+			document.querySelector('.cta-button').addEventListener('click', function(e) {
+				e.preventDefault();
+				window.location.href = 'index.html';
+				window.scrollTo(0, 0);
+			});
+		</script>
+	</body>
+</html>
