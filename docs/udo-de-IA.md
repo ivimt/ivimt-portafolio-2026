@@ -1,0 +1,1 @@
+La IA ha sido utilizada para la generación estética de las diferentes secciones de la página web. 
