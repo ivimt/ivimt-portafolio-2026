@@ -20,11 +20,6 @@ Este repositorio es el **punto de partida para el proyecto personal de cada estu
 - Los estudiantes habilitan Pages en su repositorio para publicar el proyecto en vivo en una URL como `https://usuario.github.io/proyecto`.
 - El despliegue es automático: cada commit en `main` actualiza el sitio.
 
-### Jekyll
-
-- No es necesario que los estudiantes lo usen directamente, pero Pages lo emplea en segundo plano.
-- Se incluye un archivo `.nojekyll` para evitar conflictos, salvo que se requiera explícitamente.
-
 ### GitHub Actions
 
 - Se incluyen flujos CI opcionales:
@@ -65,7 +60,6 @@ student-project-template/
 ├── project-inspiration.md  # Referencias y moodboard
 ├── GETTING-STARTED.md      # Guía de inicio y metodología
 ├── README-es.md            # Guía y registro semanal
-├── .nojekyll               # Evita conflictos con Jekyll
 └── .github/workflows/
     └── critical.yml        # Comprobaciones CI/CD
 ```
@@ -96,7 +90,6 @@ student-project-template/
 
 - GitHub Pages – [https://docs.github.com/es/pages](https://docs.github.com/es/pages)
 - GitHub Actions – [https://docs.github.com/es/actions](https://docs.github.com/es/actions)
-- Jekyll – [https://jekyllrb.com](https://jekyllrb.com)
 - Guía Markdown – [https://www.markdownguide.org](https://www.markdownguide.org)
 - Introducción YAML – [https://learnxinyminutes.com/docs/yaml/](https://learnxinyminutes.com/docs/yaml/)
 - Schema.org / JSON-LD – [https://schema.org](https://schema.org)
