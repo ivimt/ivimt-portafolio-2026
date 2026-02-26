@@ -114,7 +114,7 @@ function loadPortfolioGallery() {
 	fetch('./docs/Proyectos.csv')
 		.then(response => response.text())
 		.then(data => {
-			// Parsear el CSV
+			// Parsear el CSV de forma más robusta
 			const lines = data.trim().split('\n');
 			const projects = [];
 
@@ -124,19 +124,25 @@ function loadPortfolioGallery() {
 				const line = lines[i].trim();
 				if (line.length === 0) continue; // Saltar líneas vacías
 
-				// Parsear cada línea del CSV
+				// Dividir por la primera coma después de la URL (detectando https:// o http://)
 				// Formato: URL, Alt/Description, Title, Category, Text
-				const parts = line.split(',').map(part => part.trim());
-				
-				if (parts.length >= 4) {
-					const project = {
-						image: parts[0],
-						alt: parts[1],
-						title: parts[2],
-						category: parts[3],
-						text: parts[4] || ''
-					};
-					projects.push(project);
+				const urlMatch = line.match(/^(https?:\/\/[^,]+),\s*(.*)/);
+				if (urlMatch) {
+					const url = urlMatch[1].trim();
+					const rest = urlMatch[2];
+					const parts = rest.split(',').map(part => part.trim());
+					
+					if (parts.length >= 3) {
+						const project = {
+							image: url,
+							alt: parts[0],
+							title: parts[1],
+							category: parts[2],
+							text: parts[3] || ''
+						};
+						projects.push(project);
+						console.log('Loaded project:', project.title, '- Image:', project.image);
+					}
 				}
 			}
 
