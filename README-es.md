@@ -6,85 +6,64 @@ _Critical Coding for a Better Living._
 
 **Construye un sitio real, accesible y multilingüe—commit cada semana.**
 
-Este repositorio es el **punto de partida para el proyecto personal de cada estudiante** dentro del marco WEB ATELIER (UDIT). Mientras que `web-foundations` proporciona las lecciones canónicas y `professor-course-template` organiza la instancia del curso, la **Plantilla de Proyecto Estudiantil** es donde cada estudiante diseña y desarrolla su propio sitio web. Cada semana, los estudiantes realizan commits aquí — _un estudiante · un repo · un proyecto · un commit por clase_.
-
-## Propósito y Audiencia
-
-- **Para Estudiantes:** Un repositorio personal para construir un proyecto web paso a paso, siguiendo las lecciones. Se publica en vivo mediante GitHub Pages.
-- **Para Profesores:** Un espacio para observar el progreso semanal de cada estudiante, su historial de commits y el proyecto final.
-
-## Tecnologías Principales (Explicación Detallada)
-
-### GitHub Pages
-
-- Los estudiantes habilitan Pages en su repositorio para publicar el proyecto en vivo en una URL como `https://usuario.github.io/proyecto`.
-- El despliegue es automático: cada commit en `main` actualiza el sitio.
-
-### GitHub Actions
-
-- Se incluyen flujos CI opcionales:
-
-  - **Critical CI (Estudiante):** verifica enlaces, peso de página y accesibilidad.
-
-- Se recomienda su uso: así los estudiantes aprenden cómo los profesionales automatizan controles de calidad.
+Este repositorio me permite como estudiante un aprendizaje dinámico para la realización de una página web donde exponga mis trabajos más destacados realizados hasta la fecha. De este modo, se trata de un portafolio web cuya mecánica principal es el scroll. 
 
 ## Tecnologías de Soporte (Resumen)
 
-- **Markdown:** para `README.md` y `project-brief.md`.
-- **YAML:** en `project.yaml` para describir metadatos (título, lema, URL, etc.).
-- **Liquid:** no lo editan los estudiantes directamente, pero se usa en plantillas de curso/profesor para mostrar info del proyecto.
-- **JSON-LD:** se añade automáticamente en los templates cuando los proyectos aparecen en el showroom.
+Mediante los lenguajes de programación de JavaScript, HTML y CSS enseñados y agilizados por parte del profesor, he sido capaz de crear esta página web. Como elemento adicional, la herramienta de la inteligencia artificial me ha permitido corregir errores y acelerar el trabajo de construcción.
 
 ## Estructura del Repositorio
 
 ```plaintext
-student-project-template/
+ivimt-portafolio-2026/
 ├── index.html              # Página principal (HTML semántico)
+├── 404.html                # Página de error 404
 ├── assets/
 │   ├── css/
 │   │   ├── style.css       # Entrada principal (importa parciales)
-│   │   ├── _variables.css  # Tokens de diseño
+│   │   ├── _variables.css  # Tokens de diseño (colores, tipografía, espaciado)
 │   │   ├── _reset.css      # Reset del navegador
-│   │   ├── _base.css       # Tipografía, enlaces
-│   │   ├── _layout.css     # Contenedores, grids
-│   │   ├── _components.css # Header, footer, botones, cards
+│   │   ├── _base.css       # Estilos base y tipografía
+│   │   ├── _layout.css     # Contenedores y grids
+│   │   ├── _components.css # Componentes (cards, botones, galería)
 │   │   ├── _utilities.css  # Clases auxiliares
-│   │   ├── _accessibility.css
-│   │   ├── _responsive.css
-│   │   └── _print.css
+│   │   ├── _accessibility.css # Accesibilidad y contraste
+│   │   ├── _responsive.css # Media queries responsivas
+│   │   ├── _scrollytelling.css # Animaciones scroll y hero
+│   │   └── _print.css      # Estilos de impresión
 │   └── js/
-│       └── main.js         # Funcionalidad JavaScript
-├── images/                 # Imágenes (mantener optimizadas)
-├── project.yaml            # Metadatos del proyecto (Semana 4)
-├── project-brief.md        # Definición del proyecto (Semana 2)
+│       └── main.js         # Funcionalidad JavaScript (Intersection Observer, carga de CSV)
+├── docs/
+│   ├── Proyectos.csv       # Datos de proyectos (URL, título, categoría, descripción)
+│   ├── AI-METHODOLOGY-REMINDER.md
+│   ├── prompt-sistema-diseno.md
+│   └── udo-de-IA.md
+├── ejemplos/
+│   └── index.html          # Ejemplos adicionales
+├── js/
+│   └── main.js             # Script alternativo
+├── project.yaml            # Metadatos del proyecto
+├── project-brief.md        # Definición del proyecto
 ├── project-inspiration.md  # Referencias y moodboard
-├── GETTING-STARTED.md      # Guía de inicio y metodología
-├── README-es.md            # Guía y registro semanal
-└── .github/workflows/
-    └── critical.yml        # Comprobaciones CI/CD
+├── GETTING-STARTED.md      # Guía de inicio
+├── README-es.md            # Este archivo (en español)
+├── README.md               # Documentación en inglés
+├── package.json            # Dependencias del proyecto
+├── LICENSE-CODE            # Licencia del código
+├── LICENSE-CONTENT         # Licencia del contenido
+├── .cursorrules            # Reglas para Cursor
+├── .gitignore              # Archivos ignorados en Git
+└── .nojekyll               # Desactiva procesamiento Jekyll en GitHub Pages
 ```
 
 ## Flujo en la Práctica
 
-1. **Clonar Plantilla:** El estudiante crea su repo a partir de esta plantilla.
+1. **Clonar Plantilla:** Mediante una plantilla compartida por el profesor he estado trabajando a lo largo de cinco semanas.
 2. **Semana 1:** Configurar repo, hacer primer commit (actualizar README).
 3. **Semana 2:** Completar `project-brief.md` y `project.yaml` (definición del proyecto).
 4. **Commits Semanales:** Actualizar `index.html`, CSS y JS con lo aprendido. Cada clase → un commit.
 5. **Semana 4:** Asegurarse de completar `project.yaml`; enviar metadatos al repo del curso (PR o formulario).
 6. **Semana 5+:** Continuar mejorando el proyecto y reflexionando sobre los commits.
-
-## Escalabilidad y Retroalimentación
-
-- **Log de Commits:** Cada commit documenta el aprendizaje semanal.
-- **Revisión entre Pares:** En la Semana 5, los compañeros exploran los proyectos a través del showroom.
-- **CI:** Los checks automáticos indican rápidamente problemas (enlaces rotos, activos pesados, accesibilidad).
-- **Profesorado:** Revisa commits seleccionados o evalúa el proyecto final.
-
-## Diferencias con otros Repositorios
-
-- `web-foundations`: contiene lecciones y metodología comunes (no editable por estudiantes).
-- `professor-course-template`: organiza el curso y el showroom.
-- `student-project-template`: espacio creativo individual; este repo es el que se evalúa.
 
 ## Referencias
 

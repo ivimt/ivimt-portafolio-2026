@@ -1,0 +1,1 @@
+La IA ha sido utilizada para la generación estética de las diferentes secciones de la página web. También como herramienta de ayuda para la solución rápida de errores. Ha sido utilizada como una guía para solucionar problemas y encontrar respuesta a dudas varias.

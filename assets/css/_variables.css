@@ -14,10 +14,10 @@
 
 	/* ===== COLOR SYSTEM ===== */
 	/* Primary brand colors */
-	--color-primary: #1d4ed8;
-	--color-primary-hover: #1a46c2; /* ~10% darker */
-	--color-primary-light: #3b82f6;
-	--color-primary-dark: #1e3a8a;
+	--color-primary: #7c3aed;
+	--color-primary-hover: #6d28d9; /* ~10% darker */
+	--color-primary-light: #a78bfa;
+	--color-primary-dark: #5b21b6;
 
 	/* Neutral colors for text and backgrounds */
 	--color-text-primary: #0f172a;
@@ -25,9 +25,9 @@
 	--color-text-muted: #64748b;
 
 	/* Background colors */
-	--color-bg: #ffffff;
-	--color-bg-light: #f8fafc;
-	--color-bg-dark: #0f172a;
+	--color-bg: #f3e8ff;
+	--color-bg-light: #f9f5ff;
+	--color-bg-dark: #2d1b4e;
 
 	/* Border colors */
 	--color-border-light: #e2e8f0;
@@ -114,9 +114,9 @@
 	--gradient-chapter-3: linear-gradient(135deg, #2ecc71, #1fa65a);
 
 	/* ===== SCROLLYTELLING COLORS ===== */
-	--color-accent-blue: #3498db;
-	--color-accent-red: #e74c3c;
-	--color-accent-green: #2ecc71;
+	--color-accent-blue: #9e34db;
+	--color-accent-red: #7544b1;
+	--color-accent-green: #351482;
 	--color-overlay-dark: rgba(0, 0, 0, 0.4);
 	--color-card-bg: rgba(255, 255, 255, 0.05);
 	--color-card-border: rgba(255, 255, 255, 0.1);
@@ -135,13 +135,13 @@
 		--color-text-secondary: #cbd5e1;
 		--color-text-muted: #94a3b8;
 
-		--color-bg: #0f172a;
-		--color-bg-light: #1e293b;
-		--color-bg-dark: #020617;
+		--color-bg: #451840;
+		--color-bg-light: #ae599b;
+		--color-bg-dark: #150217;
 
-		--color-border-light: #334155;
-		--color-border-medium: #475569;
-		--color-border-dark: #64748b;
+		--color-border-light: #3ea548;
+		--color-border-medium: #196d23;
+		--color-border-dark: #648b6b;
 	}
 }
 
